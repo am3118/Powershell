@@ -1,0 +1,1 @@
+﻿Get-Mailbox -ResultSize Unlimited | Where-Object { $_.ForwardingAddress -ne $null -or $_.ForwardingSmtpAddress -ne $null } | Select-Object DisplayName, UserPrincipalName, ForwardingAddress, ForwardingSmtpAddress, DeliverToMailboxAndForward | Export-Csv -Path "C:\temp\MSDAutoForwardingMailboxes.csv" -NoTypeInformation -Encoding UTF8

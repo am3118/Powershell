@@ -82,6 +82,4 @@ ForEach($AZADApplication in $ALL_AZADApplications){
 
 #Export the results
 $date = Get-Date -Format yyyyMMdd
-$AllApps| Where-Object {($_.spexpiration -ne $null) -or ($_.ADClientSecretExpiration -ne $null) -or ($_.ADCertExpiration -ne $null)} | Export-Csv -Path "C:\temp\Enterpriseapps.csv" -NoTypeInformation
-
-#Get-MgServicePrincipal -All | Select-Object Id, DisplayName, NotificationEmailAddresses
+$AllApps| Where-Object {($_.spexpiration -ne $null) -or ($_.ADClientSecretExpiration -ne $null) -or ($_.ADCertExpiration -ne $null)} | Export-Csv -Path "C:\temp\MSD_Enterpriseapps_Feb26-2025.csv" -NoTypeInformation
